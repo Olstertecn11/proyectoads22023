@@ -12,7 +12,7 @@ namespace CapaModelo
 
         public OdbcConnection connection()
         {
-            OdbcConnection conn = new OdbcConnection("Dsn=controlempleados");
+            OdbcConnection conn = new OdbcConnection("Dsn=nomina");
             try
             {
                 conn.Open();

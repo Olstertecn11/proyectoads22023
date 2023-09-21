@@ -23,7 +23,7 @@ namespace CapaVista.Componentes.Utilidades
         public void guardarReservacion(Form child)
         {
             var dictionary = new Dictionary<string, string>();
-            List<string> columns = this.ctrNav.getColumns("empleados");
+            List<string> columns = this.ctrNav.getColumns("empleado");
 
             foreach (Control c in child.Controls)
             {
@@ -63,7 +63,27 @@ namespace CapaVista.Componentes.Utilidades
             ctrol.agregarUsuario(dictionary);
             MessageBox.Show("Usuario Creado Correctamente");
         }
+        public void guardarUsuarioNomina(Form child)
+        {
+            ControladorNomina ctrnomi = new ControladorNomina();
+            var dictionary = new Dictionary<string, string>();
+            List<string> columns = this.ctrNav.getColumns("tbl_nomina");
 
+            foreach (Control c in child.Controls)
+            {
+                if (c is TextBox)
+                {
+                    string tag = c.Tag.ToString();
+                    if (columns.Contains(tag))
+                    {
+                        dictionary.Add(tag, c.Text);
+                    }
+                    c.Text = "";
+                }
+            }
+            ctrnomi.agregarEmpleado(dictionary);
+            MessageBox.Show("Usuario Creado Correctamente");
+        }
 
     }
 }
