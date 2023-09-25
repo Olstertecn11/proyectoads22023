@@ -59,6 +59,7 @@ namespace CapaVista.Componentes.Utilidades
         }
 
 
+
         public void refrescar(Form child)
         {
             Controlador ctriv = new Controlador();
